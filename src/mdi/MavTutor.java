@@ -412,69 +412,6 @@ public class MavTutor{
             printExpandedComments(c.getReply(i), level+1);
     }
 
-   /* private void navigateComments(Comment comment, Person user){
-    	while(true){
-    		printExpandedComments(comment, 0);
-    		System.out.println("\nOptions");
-    		System.out.println("1) Reply to this comment");
-    		System.out.println("2) Go back");
-
-    		int choice = Menu.getInt("Select an option: ");
-
-    		switch(choice){
-	    		case 1-> {
-	    			if(user == null){
-	    				System.out.println("You must be logged in to reply.");
-	    				return;
-	    			}
-	    			String replyText = Menu.getString("Enter your reply: ");
-	    			Comment reply = new Comment(replyText, user, comment);
-	    			comment.addReply(replyText, user);
-	    			System.out.println("Reply added!");
-	    		}
-	    		case 2 -> {
-	    			int numReplies = comment.numReplies();
-	    			if(numReplies == 0){
-	    				System.out.println("No replies to view");
-	    				break;
-	    			}
-	    			System.out.println("\nReplies");
-	    			for(int i = 0; i < numReplies; ++i){
-	    				System.out.println((i + 1) + ") " + comment.getReply(i).toString());
-	    			}
-	    			int sel = Menu.getInt("Select a reply to view (0 to cancel): ");
-                	if (sel <= 0 || sel > numReplies) {
-	                    System.out.println("Cancelled or invalid selection.");
-	                    break;
-                	}
-                	navigateComments(comment.getReply(sel -1), user);
-	    		}
-	    		case 2 -> {
-	                if (comment.numReplies() == 0) {
-	                    System.out.println("No replies to view.");
-	                    break;
-	                }
-
-	                System.out.println("\nReplies:");
-	                for (int i = 0; i < comment.numReplies(); ++i) {
-	                    System.out.println((i + 1) + ") " + comment.getReply(i).toString());
-	                }
-
-	                int replyChoice = Menu.getInt("Select a reply to view (0 to cancel): ");
-	                if (replyChoice > 0 && replyChoice <= comment.numReplies()) {
-	                    Comment selectedReply = comment.getReply(replyChoice - 1);
-	                    navigateComments(selectedReply, user);
-	                } else {
-                    System.out.println("Cancelled or invalid selection.");
-                	}
-                }
-	    		case 3 -> {
-	    			return;
-	    		}
-	    	default -> System.out.println("Invalid choice");
-    		}
-    	}
-    }*/
 
 	private void navigateComments(Comment comment, Person user) {
     while (true) {
